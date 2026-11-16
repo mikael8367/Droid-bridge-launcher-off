@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="other">%d new notifications</item>
+        <item quantity="one">%d new notification</item>
+    </plurals>
+    <plurals name="renderer_version_rules_active">
+        <item quantity="other">%1$d version rules active. Per-instance renderer settings still take priority.</item>
+        <item quantity="one">%1$d version rule active. Per-instance renderer settings still take priority.</item>
+    </plurals>
+</resources>

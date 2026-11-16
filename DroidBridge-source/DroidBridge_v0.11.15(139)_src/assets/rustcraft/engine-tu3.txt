@@ -1,0 +1,5 @@
+build=123
+api=1
+game=1.2.5
+tu=3
+lib=rustcraft_tu3

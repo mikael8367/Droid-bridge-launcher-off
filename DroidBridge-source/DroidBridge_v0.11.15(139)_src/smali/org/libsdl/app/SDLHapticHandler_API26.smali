@@ -1,0 +1,85 @@
+.class Lorg/libsdl/app/SDLHapticHandler_API26;
+.super Lorg/libsdl/app/SDLHapticHandler;
+.source "SourceFile"
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Lorg/libsdl/app/SDLHapticHandler;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public run(IFI)V
+    .locals 3
+
+    invoke-virtual {p0, p1}, Lorg/libsdl/app/SDLHapticHandler;->getHaptic(I)Lorg/libsdl/app/SDLHapticHandler$SDLHaptic;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_3
+
+    const/4 v1, 0x0
+
+    cmpl-float v1, p2, v1
+
+    if-nez v1, :cond_0
+
+    invoke-virtual {p0, p1}, Lorg/libsdl/app/SDLHapticHandler;->stop(I)V
+
+    return-void
+
+    :cond_0
+    const/high16 v1, 0x437f0000    # 255.0f
+
+    mul-float/2addr p2, v1
+
+    invoke-static {p2}, Ljava/lang/Math;->round(F)I
+
+    move-result p2
+
+    const/16 v1, 0xff
+
+    if-le p2, v1, :cond_1
+
+    move p2, v1
+
+    :cond_1
+    const/4 v1, 0x1
+
+    if-ge p2, v1, :cond_2
+
+    invoke-virtual {p0, p1}, Lorg/libsdl/app/SDLHapticHandler;->stop(I)V
+
+    return-void
+
+    :cond_2
+    :try_start_0
+    iget-object p1, v0, Lorg/libsdl/app/SDLHapticHandler$SDLHaptic;->vib:Landroid/os/Vibrator;
+
+    int-to-long v1, p3
+
+    invoke-static {v1, v2, p2}, Landroid/os/VibrationEffect;->createOneShot(JI)Landroid/os/VibrationEffect;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2}, Landroid/os/Vibrator;->vibrate(Landroid/os/VibrationEffect;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    iget-object p1, v0, Lorg/libsdl/app/SDLHapticHandler$SDLHaptic;->vib:Landroid/os/Vibrator;
+
+    int-to-long p2, p3
+
+    invoke-virtual {p1, p2, p3}, Landroid/os/Vibrator;->vibrate(J)V
+
+    :cond_3
+    return-void
+.end method

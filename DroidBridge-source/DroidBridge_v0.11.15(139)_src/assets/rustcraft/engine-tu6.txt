@@ -1,0 +1,5 @@
+build=182
+api=1
+game=1.5.2
+tu=6
+lib=rustcraft_tu6

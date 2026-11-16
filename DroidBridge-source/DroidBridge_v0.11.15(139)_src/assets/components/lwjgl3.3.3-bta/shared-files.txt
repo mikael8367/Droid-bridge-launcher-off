@@ -1,0 +1,9 @@
+# Files identical to LWJGL 3.3.3's, stored once in the APK and copied from there on install
+# (feature/unpack/UnpackComponentsTask, SHARED_FILES_LIST).
+natives/arm64-v8a/libc++_shared.so=components/lwjgl3.3.3/natives/arm64-v8a/libc++_shared.so
+natives/arm64-v8a/liblwjgl.so=components/lwjgl3.3.3/natives/arm64-v8a/liblwjgl.so
+natives/arm64-v8a/liblwjgl_nanovg.so=components/lwjgl3.3.3/natives/arm64-v8a/liblwjgl_nanovg.so
+natives/arm64-v8a/liblwjgl_opengl.so=components/lwjgl3.3.3/natives/arm64-v8a/liblwjgl_opengl.so
+natives/arm64-v8a/liblwjgl_stb.so=components/lwjgl3.3.3/natives/arm64-v8a/liblwjgl_stb.so
+natives/arm64-v8a/liblwjgl_tinyfd.so=components/lwjgl3.3.3/natives/arm64-v8a/liblwjgl_tinyfd.so
+natives/arm64-v8a/libopenal.so=components/lwjgl3.3.3/natives/arm64-v8a/libopenal.so

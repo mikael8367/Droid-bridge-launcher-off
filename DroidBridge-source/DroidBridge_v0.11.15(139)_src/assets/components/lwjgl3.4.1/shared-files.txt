@@ -1,0 +1,2 @@
+# Files identical to LWJGL 3.3.3's, stored once in the APK (feature/unpack/UnpackComponentsTask).
+natives/arm64-v8a/libc++_shared.so=components/lwjgl3.3.3/natives/arm64-v8a/libc++_shared.so

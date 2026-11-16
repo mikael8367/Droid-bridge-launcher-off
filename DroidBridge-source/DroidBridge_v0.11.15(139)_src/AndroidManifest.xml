@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    android:compileSdkVersion="36"
+    android:compileSdkVersionCodename="16"
+    package="ca.dnamobile.droidbridgelauncher"
+    platformBuildVersionCode="36"
+    platformBuildVersionName="16"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Permite que o app crie soquetes de rede e utilize protocolos de rede personalizados. O navegador e outros apps fornecem meios de enviar dados para a Internet, e por isso esta permissão não é necessária para enviar os dados. -->
+    <uses-permission
+        android:name="android.permission.INTERNET" />
+    <!-- Permite que o app acesse informações sobre conexões de rede, como as redes existentes e conectadas. -->
+    <uses-permission
+        android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- Permite que o app receba pacotes enviados para todos os dispositivos em uma rede Wi-Fi usando endereços de difusão seletiva, e não apenas o telefone. Consome mais energia do que o modo não multicast. -->
+    <uses-permission
+        android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+    <!-- Permite que o app acesse informações sobre redes Wi-Fi, como a ativação do Wi-Fi e o nome dos dispositivos Wi-Fi conectados. -->
+    <uses-permission
+        android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- Permite que o app use serviços em primeiro plano. -->
+    <uses-permission
+        android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission
+        android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+    <uses-permission
+        android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION" />
+    <uses-permission
+        android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" />
+    <uses-permission
+        android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- Enquanto está sendo usado, este app pode gravar áudio usando o microfone. -->
+    <uses-permission
+        android:name="android.permission.RECORD_AUDIO" />
+    <uses-feature
+        android:name="android.hardware.sensor.gyroscope"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.vulkan.level"
+        android:required="false"
+        android:version="1" />
+    <!-- Permite que o app leia o conteúdo do armaz. compartilhado. -->
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <!-- Permite que o app grave o conteúdo do armaz. compartilhado. -->
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    <queries>
+        <package
+            android:name="top.mobilegl.plugin" />
+        <package
+            android:name="com.fcl.plugin.mobileglues" />
+        <package
+            android:name="com.bzlzhh.plugin.ngg" />
+        <package
+            android:name="com.bzlzhh.plugin.ngg.angleless" />
+        <package
+            android:name="com.fcl.plugin.renderer.mobileglues" />
+        <package
+            android:name="com.fcl.plugin.renderer.ltw" />
+        <package
+            android:name="com.fcl.plugin.renderer.gl4es" />
+        <package
+            android:name="com.fcl.plugin.renderer.angle" />
+        <package
+            android:name="com.fcl.plugin.renderer.mesa" />
+        <package
+            android:name="com.fcl.plugin.driver.freedreno" />
+        <package
+            android:name="com.fcl.plugin.driver.turnip" />
+        <package
+            android:name="com.fcl.plugin.turnip" />
+        <package
+            android:name="com.fcl.plugin.adreno" />
+        <package
+            android:name="com.bzlzhh.plugin.driver.freedreno" />
+        <package
+            android:name="com.bzlzhh.plugin.driver.turnip" />
+        <package
+            android:name="com.bzlzhh.plugin.turnip" />
+        <package
+            android:name="com.bzlzhh.plugin.adreno" />
+        <package
+            android:name="com.tungsten.fcl.plugin.driver.freedreno" />
+        <package
+            android:name="com.tungsten.fcl.plugin.driver.turnip" />
+        <package
+            android:name="ca.dnamobile.renderer.litegles" />
+        <provider
+            android:authorities="ca.dnamobile.renderer.litegles.settings" />
+        <package
+            android:name="ca.dnamobile.javalauncher.ffmpeg" />
+        <package
+            android:name="ca.dnamobile.javalauncher.ffmpeg.debug" />
+        <package
+            android:name="ca.dnamobile.javalauncher.debug.ffmpeg" />
+        <package
+            android:name="ca.dnamobile.javalauncher.ffmpegplugin" />
+        <package
+            android:name="ca.dnamobile.javalauncher.ffmpegplugin.debug" />
+        <intent>
+            <action
+                android:name="ca.dnamobile.javalauncher.ffmpeg.PLUGIN" />
+        </intent>
+        <intent>
+            <action
+                android:name="ca.dnamobile.javalauncher.FFMPEG_PLUGIN" />
+        </intent>
+        <intent>
+            <action
+                android:name="android.intent.action.TTS_SERVICE" />
+        </intent>
+        <intent>
+            <action
+                android:name="android.speech.tts.engine.CHECK_TTS_DATA" />
+        </intent>
+        <intent>
+            <action
+                android:name="android.speech.tts.engine.INSTALL_TTS_DATA" />
+        </intent>
+        <package
+            android:name="com.google.android.tts" />
+        <package
+            android:name="com.samsung.SMT" />
+        <package
+            android:name="com.svox.pico" />
+        <intent>
+            <action
+                android:name="android.intent.action.MAIN" />
+        </intent>
+        <intent>
+            <action
+                android:name="android.intent.action.VIEW" />
+            <category
+                android:name="android.intent.category.BROWSABLE" />
+            <data
+                android:scheme="https" />
+        </intent>
+    </queries>
+    <!-- Permite que o app controle a vibração. -->
+    <uses-permission
+        android:name="android.permission.VIBRATE" />
+    <permission
+        android:name="ca.dnamobile.droidbridgelauncher.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:protectionLevel="signature" />
+    <uses-permission
+        android:name="ca.dnamobile.droidbridgelauncher.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+    <application
+        android:theme="@style/Theme.DroidBridge"
+        android:label="@string/app_name"
+        android:icon="@mipmap/ic_launcher_droidbridge"
+        android:name="com.pairip.application.Application"
+        android:allowBackup="false"
+        android:supportsRtl="false"
+        android:extractNativeLibs="true"
+        android:roundIcon="@mipmap/ic_launcher_droidbridge_round"
+        android:appCategory="game"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:allowAudioPlaybackCapture="true"
+        android:allowNativeHeapPointerTagging="false">
+        <activity
+            android:name="net.openid.appauth.RedirectUriReceiverActivity"
+            android:exported="true">
+            <intent-filter>
+                <action
+                    android:name="android.intent.action.VIEW" />
+                <category
+                    android:name="android.intent.category.DEFAULT" />
+                <category
+                    android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:scheme="droidbridge" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="ca.dnamobile.droidbridgelauncher.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="fullSensor"
+            android:configChanges="keyboard|keyboardHidden|uiMode">
+            <intent-filter>
+                <action
+                    android:name="android.intent.action.MAIN" />
+                <category
+                    android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="ca.dnamobile.droidbridgelauncher.MainActivity"
+            android:exported="false"
+            android:screenOrientation="unspecified"
+            android:configChanges="keyboard|keyboardHidden|uiMode">
+            <property
+                android:name="android.window.PROPERTY_COMPAT_ALLOW_RESTRICTED_RESIZABILITY"
+                android:value="true" />
+        </activity>
+        <activity
+            android:name="ca.dnamobile.droidbridgelauncher.DroidBridgeStandaloneJarActivity"
+            android:exported="false"
+            android:process=":java_gui"
+            android:screenOrientation="landscape"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize"
+            android:hardwareAccelerated="false" />
+        <activity
+            android:name="ca.dnamobile.droidbridgelauncher.InstanceShortcutActivity"
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:screenOrientation="fullSensor"
+            android:configChanges="keyboard|keyboardHidden|uiMode"
+            android:noHistory="true" />
+        <activity
+            android:name="ca.dnamobile.droidbridgelauncher.InstancePickerActivity"
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:screenOrientation="fullSensor"
+            android:configChanges="keyboard|keyboardHidden|uiMode"
+            android:noHistory="true">
+            <intent-filter>
+                <action
+                    android:name="ca.dnamobile.droidbridgelauncher.action.PICK_INSTANCE" />
+                <category
+                    android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="ca.dnamobile.droidbridgelauncher.launcher.DroidBridgeLaunchActivity"
+            android:exported="false"
+            android:screenOrientation="unspecified"
+            android:configChanges="keyboard|keyboardHidden|uiMode">
+            <property
+                android:name="android.window.PROPERTY_COMPAT_ALLOW_RESTRICTED_RESIZABILITY"
+                android:value="true" />
+        </activity>
+        <activity
+            android:name="ca.dnamobile.droidbridgelauncher.ModpackUpdateDetailsActivity"
+            android:exported="false"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name="ca.dnamobile.droidbridgelauncher.LauncherSettingsActivity"
+            android:exported="false"
+            android:screenOrientation="fullSensor"
+            android:configChanges="keyboard|keyboardHidden|uiMode" />
+        <activity
+            android:name="ca.dnamobile.droidbridgelauncher.InstanceDetailsActivity"
+            android:exported="false"
+            android:screenOrientation="fullSensor"
+            android:configChanges="keyboard|keyboardHidden|uiMode" />
+        <activity
+            android:name="ca.dnamobile.droidbridgelauncher.ContentBrowserActivity"
+            android:exported="false"
+            android:screenOrientation="fullSensor"
+            android:configChanges="keyboard|keyboardHidden|uiMode" />
+        <activity
+            android:name="ca.dnamobile.droidbridgelauncher.input.GamepadMappingTransferActivity"
+            android:exported="false"
+            android:screenOrientation="fullSensor"
+            android:configChanges="keyboard|keyboardHidden|uiMode" />
+        <activity
+            android:name="ca.dnamobile.droidbridgelauncher.ContentProjectDetailsActivity"
+            android:exported="false"
+            android:screenOrientation="fullSensor"
+            android:configChanges="keyboard|keyboardHidden|uiMode" />
+        <activity
+            android:name="ca.dnamobile.droidbridgelauncher.settings.SimpleVoiceChatPermissionActivity"
+            android:exported="false"
+            android:screenOrientation="sensorLandscape" />
+        <activity
+            android:name="ca.dnamobile.droidbridgelauncher.fancymenu.MicrosoftAuthActivity"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" />
+        <activity
+            android:name="ca.dnamobile.droidbridgelauncher.ErrorActivity"
+            android:exported="false"
+            android:excludeFromRecents="true"
+            android:screenOrientation="sensorLandscape"
+            android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode" />
+        <activity
+            android:name="ca.dnamobile.droidbridgelauncher.GameActivity"
+            android:exported="false"
+            android:process=":game"
+            android:screenOrientation="sensorLandscape"
+            android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode"
+            android:supportsPictureInPicture="true" />
+        <service
+            android:name="ca.dnamobile.droidbridgelauncher.recording.GameRecordingService"
+            android:exported="false"
+            android:process=":recording"
+            android:stopWithTask="false"
+            android:foregroundServiceType="mediaProjection|microphone" />
+        <activity
+            android:theme="@style/Theme.DroidBridge.HorizonHandoff"
+            android:name="ca.dnamobile.droidbridgelauncher.engine.rustcraft.RustcraftLaunchActivity"
+            android:enabled="true"
+            android:exported="false"
+            android:excludeFromRecents="true"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" />
+        <activity
+            android:theme="@style/HorizonGameTheme"
+            android:name="dev.rustcraft.android.RustcraftActivity"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":rustcraft"
+            android:taskAffinity="ca.dnamobile.droidbridgelauncher.rustcraft"
+            android:screenOrientation="sensorLandscape"
+            android:configChanges="density|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode"
+            android:windowSoftInputMode="adjustResize"
+            android:resizeableActivity="true"
+            android:supportsPictureInPicture="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="rustcraft_android" />
+        </activity>
+        <activity
+            android:theme="@style/HorizonGameTheme"
+            android:name="dev.rustcraft.android.RustcraftTu2Activity"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":rustcraft"
+            android:taskAffinity="ca.dnamobile.droidbridgelauncher.rustcraft"
+            android:screenOrientation="sensorLandscape"
+            android:configChanges="density|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode"
+            android:windowSoftInputMode="adjustResize"
+            android:resizeableActivity="true"
+            android:supportsPictureInPicture="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="rustcraft_tu2" />
+        </activity>
+        <activity
+            android:theme="@style/HorizonGameTheme"
+            android:name="dev.rustcraft.android.RustcraftTu3Activity"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":rustcraft"
+            android:taskAffinity="ca.dnamobile.droidbridgelauncher.rustcraft"
+            android:screenOrientation="sensorLandscape"
+            android:configChanges="density|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode"
+            android:windowSoftInputMode="adjustResize"
+            android:resizeableActivity="true"
+            android:supportsPictureInPicture="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="rustcraft_tu3" />
+        </activity>
+        <activity
+            android:theme="@style/HorizonGameTheme"
+            android:name="dev.rustcraft.android.RustcraftTu4Activity"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":rustcraft"
+            android:taskAffinity="ca.dnamobile.droidbridgelauncher.rustcraft"
+            android:screenOrientation="sensorLandscape"
+            android:configChanges="density|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode"
+            android:windowSoftInputMode="adjustResize"
+            android:resizeableActivity="true"
+            android:supportsPictureInPicture="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="rustcraft_tu4" />
+        </activity>
+        <activity
+            android:theme="@style/HorizonGameTheme"
+            android:name="dev.rustcraft.android.RustcraftTu5Activity"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":rustcraft"
+            android:taskAffinity="ca.dnamobile.droidbridgelauncher.rustcraft"
+            android:screenOrientation="sensorLandscape"
+            android:configChanges="density|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode"
+            android:windowSoftInputMode="adjustResize"
+            android:resizeableActivity="true"
+            android:supportsPictureInPicture="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="rustcraft_tu5" />
+        </activity>
+        <activity
+            android:theme="@style/Theme.DroidBridge.HorizonHandoff"
+            android:name="ca.dnamobile.droidbridgelauncher.engine.horizon.HorizonLaunchActivity"
+            android:enabled="true"
+            android:exported="false"
+            android:excludeFromRecents="true"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" />
+        <activity
+            android:theme="@style/HorizonGameTheme"
+            android:name="dev.horizon.android.HorizonActivity"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":horizon"
+            android:taskAffinity="ca.dnamobile.droidbridgelauncher.horizon"
+            android:screenOrientation="sensorLandscape"
+            android:configChanges="density|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode"
+            android:windowSoftInputMode="adjustResize"
+            android:resizeableActivity="true"
+            android:supportsPictureInPicture="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="horizon_android" />
+        </activity>
+        <service
+            android:name="ca.dnamobile.droidbridgelauncher.engine.horizon.HorizonInstallService"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":horizon" />
+        <provider
+            android:name="dev.horizon.android.HorizonDocumentsProvider"
+            android:permission="android.permission.MANAGE_DOCUMENTS"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":horizon"
+            android:authorities="ca.dnamobile.droidbridgelauncher.horizon.documents"
+            android:grantUriPermissions="true">
+            <intent-filter>
+                <action
+                    android:name="android.content.action.DOCUMENTS_PROVIDER" />
+            </intent-filter>
+        </provider>
+        <activity
+            android:name="ca.dnamobile.droidbridgelauncher.engine.horizon.HorizonAddonsActivity"
+            android:enabled="true"
+            android:exported="false"
+            android:screenOrientation="fullSensor"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" />
+        <provider
+            android:name="dev.horizon.android.HorizonAddonsProvider"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":horizon"
+            android:authorities="ca.dnamobile.droidbridgelauncher.horizon.addons" />
+        <activity
+            android:name="ca.dnamobile.droidbridgelauncher.controls.ControlsActivity"
+            android:exported="false"
+            android:screenOrientation="sensorLandscape"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name="ca.dnamobile.droidbridgelauncher.controls.ControlsEditorActivity"
+            android:exported="false"
+            android:screenOrientation="sensorLandscape"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:exported="false"
+            android:authorities="ca.dnamobile.droidbridgelauncher.fileprovider"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+        <provider
+            android:name="ca.dnamobile.droidbridgelauncher.storage.DroidBridgeDocumentsProvider"
+            android:permission="android.permission.MANAGE_DOCUMENTS"
+            android:exported="true"
+            android:authorities="ca.dnamobile.droidbridgelauncher.documents"
+            android:grantUriPermissions="true">
+            <intent-filter>
+                <action
+                    android:name="android.content.action.DOCUMENTS_PROVIDER" />
+            </intent-filter>
+        </provider>
+        <service
+            android:name="ca.dnamobile.droidbridgelauncher.installation.InstallationForegroundService"
+            android:exported="false"
+            android:foregroundServiceType="dataSync" />
+        <activity
+            android:theme="@style/Theme.AppCompat.Translucent.NoTitleBar"
+            android:name="net.openid.appauth.AuthorizationManagementActivity"
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:exported="false"
+            android:authorities="ca.dnamobile.droidbridgelauncher.androidx-startup">
+            <meta-data
+                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+                android:value="androidx.startup" />
+            <meta-data
+                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+                android:value="androidx.startup" />
+            <meta-data
+                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+                android:value="androidx.startup" />
+        </provider>
+        <receiver
+            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+            android:permission="android.permission.DUMP"
+            android:enabled="true"
+            android:exported="true"
+            android:directBootAware="false">
+            <intent-filter>
+                <action
+                    android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+            </intent-filter>
+            <intent-filter>
+                <action
+                    android:name="androidx.profileinstaller.action.SKIP_FILE" />
+            </intent-filter>
+            <intent-filter>
+                <action
+                    android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+            </intent-filter>
+            <intent-filter>
+                <action
+                    android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+            </intent-filter>
+        </receiver>
+        <activity
+            android:theme="@style/Theme.PlayCore.Transparent"
+            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
+            android:exported="false"
+            android:stateNotNeeded="true" />
+        <activity
+            android:name="com.pairip.licensecheck.LicenseActivity"
+            android:exported="false" />
+    </application>
+    <!-- É possível verificar se você tem uma licença para este app Google Play. -->
+    <uses-permission
+        android:name="com.android.vending.CHECK_LICENSE" />
+</manifest>
