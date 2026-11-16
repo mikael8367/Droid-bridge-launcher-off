@@ -1,0 +1,53 @@
+name: Extrair código do Release
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  extract-and-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar repositório
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Baixar e extrair Release Sksj
+        shell: bash
+        run: |
+          set -euo pipefail
+          URL="https://github.com/${GITHUB_REPOSITORY}/releases/download/Sksj/DroidBridge_v0.11.15.139._src.zip"
+          mkdir -p DroidBridge-source
+          curl -fL --retry 3 "$URL" -o /tmp/droidbridge-source.zip
+          unzip -q /tmp/droidbridge-source.zip -d DroidBridge-source
+          rm /tmp/droidbridge-source.zip
+
+      - name: Verificar limites do GitHub
+        shell: bash
+        run: |
+          set -euo pipefail
+          oversized="$(find DroidBridge-source -type f -size +100M -print || true)"
+          if [ -n "$oversized" ]; then
+            echo "::error::Existem arquivos maiores que 100 MB, limite do GitHub:"
+            echo "$oversized"
+            exit 1
+          fi
+          echo "Arquivos extraídos: $(find DroidBridge-source -type f | wc -l)"
+          du -sh DroidBridge-source
+
+      - name: Salvar arquivos na branch main
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add DroidBridge-source
+          if git diff --cached --quiet; then
+            echo "Nenhuma alteração para salvar."
+            exit 0
+          fi
+          git commit -m "Adicionar código-fonte extraído do Release Sksj"
+          git push origin HEAD:main
