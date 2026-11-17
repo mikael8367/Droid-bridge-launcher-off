@@ -161,20 +161,6 @@
 
     move-result-object v4
 
-    const-string v5, "last_microsoft_account_json"
-
-    invoke-interface {v4, v5, v3}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v4
-
-    const-string v5, "microsoft_login_completed_once"
-
-    const/4 v6, 0x1
-
-    invoke-interface {v4, v5, v6}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v4
-
     invoke-interface {v4}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     move-object/from16 v5, p1
