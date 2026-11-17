@@ -1,4 +1,4 @@
-successfully downloaded text file (SHA: 62affda9aeff1cce5346d1c006e03df1f0b17dd7).class public abstract LS0/a;
+.class public abstract LS0/a;
 .super Ljava/lang/Object;
 .source "SourceFile"
 

@@ -1,4 +1,4 @@
-successfully downloaded text file (SHA: 7dcdbe8b640968fcb5d10458161a358af1646e4c).class public final Lca/dnamobile/droidbridgelauncher/LauncherSettingsActivity;
+.class public final Lca/dnamobile/droidbridgelauncher/LauncherSettingsActivity;
 .super Lca/dnamobile/droidbridgelauncher/ControllerNavigationActivity;
 .source "SourceFile"
 
