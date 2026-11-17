@@ -26,6 +26,16 @@
 
     iget-object v0, p0, LB0/OfflineOpenDialogListener;->a:Lca/dnamobile/droidbridgelauncher/LauncherSettingsActivity;
 
+    const-string v2, "Abrindo cadastro de conta offline..."
+
+    const/4 v3, 0x0
+
+    invoke-static {v0, v2, v3}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/widget/Toast;->show()V
+
     new-instance v1, Landroid/widget/EditText;
 
     invoke-direct {v1, v0}, Landroid/widget/EditText;-><init>(Landroid/content/Context;)V
@@ -88,7 +98,11 @@
 
     invoke-virtual {v3, v4, v5}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    invoke-virtual {v3}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
+    invoke-virtual {v3}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Landroid/app/AlertDialog;->show()V
 
     return-void
 .end method
