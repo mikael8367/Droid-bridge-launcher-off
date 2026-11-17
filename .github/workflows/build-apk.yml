@@ -88,3 +88,13 @@ jobs:
         with:
           name: DroidBridge-APK
           path: DroidBridge_v0.11.15-139_offline.apk
+
+      - name: Publicar APK em Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: apk-latest
+          name: DroidBridge APK (mais recente)
+          body: APK compilado e assinado automaticamente. Instale direto no celular.
+          files: DroidBridge_v0.11.15-139_offline.apk
+          overwrite_files: true
+          make_latest: true
