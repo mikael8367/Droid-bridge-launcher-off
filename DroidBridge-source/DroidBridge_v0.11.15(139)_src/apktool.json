@@ -64,7 +64,9 @@
     "versionCode": "139"
   },
   "UsesFramework": {
-    "ids": [1],
+    "ids": [
+      1
+    ],
     "tag": null
   },
   "unknownFiles": {
@@ -115,7 +117,6 @@
     "org/apache/commons/codec/language/bm/ash_exact_polish.txt": "8",
     "org/apache/commons/codec/language/bm/gen_approx_cyrillic.txt": "8",
     "org/apache/commons/codec/language/bm/sep_rules_french.txt": "8",
-    "integrity.properties": "8",
     "org/apache/commons/codec/language/bm/ash_exact_cyrillic.txt": "8",
     "org/apache/commons/codec/language/bm/sep_rules_spanish.txt": "8",
     "org/apache/commons/codec/language/bm/ash_exact_spanish.txt": "8",
@@ -176,7 +177,6 @@
     "org/apache/commons/codec/language/bm/ash_exact_english.txt": "8",
     "org/apache/commons/codec/language/bm/ash_rules_hebrew.txt": "8",
     "org/apache/commons/codec/language/bm/gen_exact_french.txt": "8",
-    "play-services-tasks.properties": "8",
     "org/apache/commons/codec/language/bm/ash_exact_russian.txt": "8",
     "META-INF/androidx.lifecycle_lifecycle-livedata-core.version": "8",
     "META-INF/androidx.profileinstaller_profileinstaller.version": "0",
@@ -192,7 +192,6 @@
     "org/apache/commons/codec/language/bm/gen_exact_hebrew.txt": "8",
     "DebugProbesKt.bin": "8",
     "META-INF/androidx.versionedparcelable_versionedparcelable.version": "0",
-    "core-common.properties": "8",
     "META-INF/androidx.customview_customview-poolingcontainer.version": "0",
     "META-INF/androidx.savedstate_savedstate.version": "0",
     "org/apache/commons/codec/language/bm/gen_exact_italian.txt": "8",
@@ -205,7 +204,6 @@
     "org/apache/commons/codec/language/bm/ash_rules_romanian.txt": "8",
     "org/apache/commons/codec/language/bm/sep_exact_hebrew.txt": "8",
     "org/apache/commons/codec/language/bm/sep_languages.txt": "8",
-    "app-update.properties": "8",
     "META-INF/kotlinx_coroutines_android.version": "0",
     "org/apache/commons/codec/language/bm/sep_exact_spanish.txt": "8",
     "org/apache/commons/codec/language/bm/ash_approx_french.txt": "8",
@@ -230,7 +228,6 @@
     "org/apache/commons/codec/language/bm/sep_lang.txt": "8",
     "META-INF/androidx.core_core.version": "0",
     "org/apache/commons/codec/language/bm/gen_approx_turkish.txt": "8",
-    "play-services-basement.properties": "8",
     "META-INF/androidx.arch.core_core-runtime.version": "8",
     "org/apache/commons/codec/language/bm/ash_exact_hungarian.txt": "8",
     "META-INF/androidx.emoji2_emoji2.version": "0",
