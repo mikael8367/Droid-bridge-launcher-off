@@ -131,7 +131,7 @@
 
     invoke-direct/range {v2 .. v18}, Lw0/a;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    move-object/from16 v3, p0
+    move-object/from16 v7, p0
 
     invoke-virtual {v2}, Lw0/a;->h()Lorg/json/JSONObject;
 
@@ -141,7 +141,7 @@
 
     move-result-object v3
 
-    iget-object v4, v3, LB0/OfflineCreateListener;->a:Lca/dnamobile/droidbridgelauncher/LauncherSettingsActivity;
+    iget-object v4, v7, LB0/OfflineCreateListener;->a:Lca/dnamobile/droidbridgelauncher/LauncherSettingsActivity;
 
     const-string v5, "java_launcher_accounts"
 
@@ -181,7 +181,7 @@
 
     invoke-interface {v5}, Landroid/content/DialogInterface;->dismiss()V
 
-    iget-object v4, v3, LB0/OfflineCreateListener;->a:Lca/dnamobile/droidbridgelauncher/LauncherSettingsActivity;
+    iget-object v4, v7, LB0/OfflineCreateListener;->a:Lca/dnamobile/droidbridgelauncher/LauncherSettingsActivity;
 
     invoke-virtual {v4, v2}, Lca/dnamobile/droidbridgelauncher/LauncherSettingsActivity;->e2(Lw0/a;)V
 
@@ -191,7 +191,7 @@
 
     move-result-object v5
 
-    iget-object v6, v3, LB0/OfflineCreateListener;->a:Lca/dnamobile/droidbridgelauncher/LauncherSettingsActivity;
+    iget-object v6, v7, LB0/OfflineCreateListener;->a:Lca/dnamobile/droidbridgelauncher/LauncherSettingsActivity;
 
     invoke-virtual {v6, v4, v5}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
