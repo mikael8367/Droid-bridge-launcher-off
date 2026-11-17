@@ -37,6 +37,18 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 
+    const/4 v2, 0x1
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->setEnabled(Z)V
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->setClickable(Z)V
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->setFocusable(Z)V
+
+    const/high16 v2, 0x3f800000    # 1.0f
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->setAlpha(F)V
+
     new-instance v2, LB0/OfflineOpenDialogListener;
 
     invoke-direct {v2, p0}, LB0/OfflineOpenDialogListener;-><init>(Lca/dnamobile/droidbridgelauncher/LauncherSettingsActivity;)V
