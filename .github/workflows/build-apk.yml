@@ -58,8 +58,10 @@ jobs:
       - name: Alinhar e assinar
         run: |
           set -o pipefail
+          openssl pkey -in signing/key.pkcs8.pem -outform DER -out key.pk8.der
+          openssl x509 -in signing/cert.pem -outform DER -out cert.der
           zipalign -f -p 4 unsigned.apk aligned.apk 2>&1 | tee sign.log
-          apksigner sign --key signing/key.pkcs8.pem --cert signing/cert.pem --out "DroidBridge_v0.11.15-139_offline.apk" aligned.apk 2>&1 | tee -a sign.log
+          apksigner sign --key key.pk8.der --cert cert.der --out "DroidBridge_v0.11.15-139_offline.apk" aligned.apk 2>&1 | tee -a sign.log
           apksigner verify --print-certs "DroidBridge_v0.11.15-139_offline.apk" 2>&1 | tee -a sign.log
 
       - name: Publicar APK como artefato
