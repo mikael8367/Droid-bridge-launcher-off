@@ -1,4 +1,4 @@
-.class public final Lca/dnamobile/droidbridgelauncher/LauncherSettingsActivity;
+successfully downloaded text file (SHA: 7dcdbe8b640968fcb5d10458161a358af1646e4c).class public final Lca/dnamobile/droidbridgelauncher/LauncherSettingsActivity;
 .super Lca/dnamobile/droidbridgelauncher/ControllerNavigationActivity;
 .source "SourceFile"
 
@@ -5841,7 +5841,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    goto/16 :cond_1
 
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -21195,6 +21195,8 @@
     invoke-virtual {v0, v2, v3, v4}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
 
     :goto_2
+
+    invoke-static {v1}, LB0/OfflineAccountHelper;->install(Lca/dnamobile/droidbridgelauncher/LauncherSettingsActivity;)V
     return-void
 
     :cond_4
