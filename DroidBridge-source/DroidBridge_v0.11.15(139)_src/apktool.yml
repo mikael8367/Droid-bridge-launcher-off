@@ -243,7 +243,7 @@ unknownFiles:
   org/apache/commons/codec/language/dmrules.txt: '8'
 usesFramework:
   ids:
-  - '1'
+  - 1
   tag: null
 version: 2.10.0
 versionInfo:
