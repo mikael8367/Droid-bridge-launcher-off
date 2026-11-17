@@ -26,7 +26,7 @@
 
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
-    .locals 7
+    .locals 19
 
     iget-object v0, p0, LB0/OfflineCreateListener;->b:Landroid/widget/EditText;
 
@@ -184,6 +184,8 @@
     filled-new-array {v0}, [Ljava/lang/Object;
 
     move-result-object v5
+
+    iget-object v6, p0, LB0/OfflineCreateListener;->a:Lca/dnamobile/droidbridgelauncher/LauncherSettingsActivity;
 
     invoke-virtual {v6, v4, v5}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
